@@ -13,6 +13,8 @@ namespace KoFiWebhookDemo
 {
     public class Startup
     {
+        private string _discordUrl = null;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -30,7 +32,7 @@ namespace KoFiWebhookDemo
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
